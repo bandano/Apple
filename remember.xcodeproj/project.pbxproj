@@ -12,6 +12,7 @@
 		1855882F21BEFF5500D940CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1855882E21BEFF5500D940CC /* Assets.xcassets */; };
 		1855883221BEFF5500D940CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1855883021BEFF5500D940CC /* LaunchScreen.storyboard */; };
 		1855883E21BF130C00D940CC /* ListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1855883D21BF130C00D940CC /* ListController.swift */; };
+		D6ACD29021C040D10036E66F /* Vegeta-cross.png in Resources */ = {isa = PBXBuildFile; fileRef = D6ACD28F21C040D00036E66F /* Vegeta-cross.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		1855883121BEFF5500D940CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1855883321BEFF5500D940CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1855883D21BF130C00D940CC /* ListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListController.swift; sourceTree = "<group>"; };
+		D6ACD28F21C040D00036E66F /* Vegeta-cross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Vegeta-cross.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,9 +61,18 @@
 				1855882E21BEFF5500D940CC /* Assets.xcassets */,
 				1855883021BEFF5500D940CC /* LaunchScreen.storyboard */,
 				1855883321BEFF5500D940CC /* Info.plist */,
+				D6ACD29121C040E90036E66F /* images */,
 				1855883D21BF130C00D940CC /* ListController.swift */,
 			);
 			path = remember;
+			sourceTree = "<group>";
+		};
+		D6ACD29121C040E90036E66F /* images */ = {
+			isa = PBXGroup;
+			children = (
+				D6ACD28F21C040D00036E66F /* Vegeta-cross.png */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,6 +135,7 @@
 			files = (
 				1855883221BEFF5500D940CC /* LaunchScreen.storyboard in Resources */,
 				1855882F21BEFF5500D940CC /* Assets.xcassets in Resources */,
+				D6ACD29021C040D10036E66F /* Vegeta-cross.png in Resources */,
 				1855882D21BEFF4F00D940CC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
