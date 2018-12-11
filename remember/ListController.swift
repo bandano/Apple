@@ -36,7 +36,7 @@ class ListController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "shoppingitem", for: indexPath)
         if let label = cell.textLabel {
-            label.text = "Hello World"
+            label.text = "Lord Samuel"
         }
         return cell
     }
