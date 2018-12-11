@@ -29,7 +29,7 @@ class ListController: UITableViewController {
             }
             
         }))
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "delete", style: .cancel, handler: nil))
         present(alert, animated: true, completion: nil)
         
     }
@@ -45,6 +45,18 @@ class ListController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("row\(indexPath.row) selected")
+        if let cell:UITableViewCell = self.tableView?.cellForRow(at: indexPath) {
+            print("cell detected: \(cell)")
+            if cell.accessoryType == UITableViewCell.AccessoryType.checkmark {
+                cell.accessoryType = .none
+            } else{
+                cell.accessoryType = .checkmark
+            }
+        }
+        
+        
+        
+        
         tableView.deselectRow(at: indexPath, animated: true) }
         
 
