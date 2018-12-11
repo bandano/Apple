@@ -41,7 +41,14 @@
                             <outlet property="delegate" destination="Ve2-cL-meh" id="K5H-a7-bao"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="remember" id="nM7-V1-ghX"/>
+                    <navigationItem key="navigationItem" title="remember" id="nM7-V1-ghX">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="o4a-fr-jBi">
+                            <connections>
+                                <action selector="showDialog:" destination="Ve2-cL-meh" id="cwY-vH-bgw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AYv-Lm-fTt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
