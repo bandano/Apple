@@ -10,11 +10,12 @@ import UIKit
 
 class ListController: UITableViewController {
     
-    var items:[String] = ["Bread", "Butter"]
+    var items:[String] = ["games", "food"]
    
     @IBAction func showDialog(_ sender: UIBarButtonItem) {
         print("showDialog")
-        let alert = UIAlertController(title: "New Item", message: "Type item below", preferredStyle: UIAlertController.Style.alert)
+        
+        let alert = UIAlertController(title: "New Item", message: "need to remember?", preferredStyle: UIAlertController.Style.alert)
         alert.addTextField(configurationHandler: nil)
         alert.addAction(UIAlertAction(title: "Add", style: .default, handler: { (action) in
             if let textFields = alert.textFields {
@@ -34,15 +35,25 @@ class ListController: UITableViewController {
         
     }
     
-    
+    //code from ios worksheet coventry university 3o1cem
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        let savedItems = UserDefaults.standard
+        if let loadedItems:[String] = savedItems.object(forKey: "items") as! [String]? {
+            print("data loaded")
+            print(loadedItems)
+            self.items = loadedItems
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+        
         
 
-        
     }
-
+//below is where the check marks are generated
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("row\(indexPath.row) selected")
         if let cell:UITableViewCell = self.tableView?.cellForRow(at: indexPath) {
@@ -61,8 +72,6 @@ class ListController: UITableViewController {
         
 
     
-    
-    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -73,8 +82,7 @@ class ListController: UITableViewController {
         return self.items.count
         
     }
-
-    
+//data persistance layer shown below
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "shoppingitem", for: indexPath)
         if let label = cell.textLabel {
@@ -82,7 +90,15 @@ class ListController: UITableViewController {
         }
         return cell
     }
-    
-    
+    func saveList() {
+        let savedItems = UserDefaults.standard
+        savedItems.set(items, forKey: "items")
+        savedItems.synchronize()
+        print("saved")
+        self.saveList()
+        
+    }
+
+
 
 }
