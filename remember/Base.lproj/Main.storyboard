@@ -46,9 +46,7 @@
                     <navigationItem key="navigationItem" title="remember" id="nM7-V1-ghX">
                         <barButtonItem key="leftBarButtonItem" title="sign up" id="GX4-Jq-V3Z">
                             <connections>
-                                <segue destination="UKW-G5-WLq" kind="popover" identifier="signup" popoverAnchorBarButtonItem="GX4-Jq-V3Z" id="WvO-qT-Wtu">
-                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                </segue>
+                                <segue destination="UKW-G5-WLq" kind="push" identifier="signup" id="WvO-qT-Wtu"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="o4a-fr-jBi">
@@ -69,13 +67,67 @@
             <objects>
                 <viewController id="UKW-G5-WLq" customClass="ViewController" customModule="remember" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mls-eQ-g6Z">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e7K-xh-Xju">
+                                <rect key="frame" x="64" y="421" width="47" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Sign in"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6fb-2D-tFL">
+                                <rect key="frame" x="217" y="421" width="50" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="sign up"/>
+                            </button>
+                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8uh-Lu-ggQ">
+                                <rect key="frame" x="0.0" y="70" width="320" height="56"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="UKW-G5-WLq" id="Z0b-Gt-5aN"/>
+                                </connections>
+                            </searchBar>
+                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="orr-t2-Vp3">
+                                <rect key="frame" x="0.0" y="156" width="320" height="56"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="UKW-G5-WLq" id="g3h-NG-KcX"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="xX2-bm-1Ns"/>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="awU-nM-N32"/>
+                        <barButtonItem width="131" style="plain" systemItem="fixedSpace" id="z1X-Ev-UkY"/>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="wN5-hu-rEb" id="QJ3-bv-rjV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bJi-Ou-xH5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="d88-kw-mhy">
+                    <connections>
+                        <outlet property="delegate" destination="UKW-G5-WLq" id="3IW-0L-8Gd"/>
+                        <outlet property="searchBar" destination="8uh-Lu-ggQ" id="LtK-TC-F1U"/>
+                        <outlet property="searchContentsController" destination="UKW-G5-WLq" id="3sl-nE-a0j"/>
+                        <outlet property="searchResultsDataSource" destination="UKW-G5-WLq" id="5rB-OT-Vkj"/>
+                        <outlet property="searchResultsDelegate" destination="UKW-G5-WLq" id="89Z-Iz-Yvc"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="wN5-hu-rEb">
+                    <connections>
+                        <outlet property="delegate" destination="UKW-G5-WLq" id="IBk-Yr-XoI"/>
+                        <outlet property="searchBar" destination="orr-t2-Vp3" id="SmA-5S-Yzg"/>
+                        <outlet property="searchContentsController" destination="UKW-G5-WLq" id="KHv-1l-FHz"/>
+                        <outlet property="searchResultsDataSource" destination="UKW-G5-WLq" id="dmb-LP-QN6"/>
+                        <outlet property="searchResultsDelegate" destination="UKW-G5-WLq" id="4dQ-3t-Jdt"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="518" y="110"/>
         </scene>
